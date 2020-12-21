@@ -9,21 +9,23 @@
                 setTimeout(function () {
                     setTimeout(function () { 
                         if (/android/i.test(userAgent)) {
-                            alert('01');
-                            window.location = "https://play.google.com/store/apps/details?id=com.santander.app&hl=pt_BR&gl=US";
+                            alert('01a');
+			    window.location.href = "santanderpf://deeplink?tela=emprestimos";
+                            //window.location = "https://play.google.com/store/apps/details?id=com.santander.app&hl=pt_BR&gl=US";
                         }
                     }, 1500);
                     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                        alert('02');
-                        window.location = "https://apps.apple.com/br/app/banco-santander-brasil/id613365711";
+                        alert('02a');
+			window.location.href = "santanderpf://deeplink?tela=emprestimos";
+                        //window.location = "https://apps.apple.com/br/app/banco-santander-brasil/id613365711";
                     }
                 }, 100);
                 if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                    alert('03');
+                    alert('03a');
                     window.location.href = "santanderpf://deeplink?tela=emprestimos";
                 }
                 else{
-                    alert('04');
+                    alert('04a');
                     window.location.href = "santanderpf://deeplink?tela=emprestimos";
                 }
             }
