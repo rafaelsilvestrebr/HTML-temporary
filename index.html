@@ -1,0 +1,38 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Verifica App</title>
+		<script type="text/javascript"> 
+            function OpenApp(){
+                var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+                var now = new Date().valueOf();
+                setTimeout(function () {
+                    setTimeout(function () { 
+                        if (/android/i.test(userAgent)) {
+                            alert('01');
+                            window.location = "https://play.google.com/store/apps/details?id=com.santander.app&hl=pt_BR&gl=US";
+                        }
+                    }, 1500);
+                    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                        alert('02');
+                        window.location = "https://apps.apple.com/br/app/banco-santander-brasil/id613365711";
+                    }
+                }, 100);
+                if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                    alert('03');
+                    window.location.href = "santanderpf://deeplink?tela=emprestimos";
+                }
+                else{
+                    alert('04');
+                    window.location.href = "santanderpf://deeplink?tela=emprestimos";
+                }
+            }
+		</script>
+	</head>
+	<body>
+        <a onclick="OpenApp()" target="_blank" class="btn-std mobile-only btn-default" data-gtm-element="link" data-gtm-action="click" data-gtm-category="portal:transferencia-pix" data-gtm-label="botao:cadastre-sua-empresa-agora-2"></a>
+        <script>
+            setTimeout(function(){ document.querySelector('.btn-std').click() }, 100);
+        </script>
+	</body>
+	</html>
